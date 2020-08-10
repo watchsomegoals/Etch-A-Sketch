@@ -5,5 +5,16 @@
 
 #container {
     height: 80%;
-    width: 50%;
+    width: 100%;
+}
+
+.row {
+    border: 1px solid black;
+}
+
+.column {
+    border: 1px solid black;
+    min-width: 20px;
+    min-height: 20px;
+    display: inline-block;
 }
