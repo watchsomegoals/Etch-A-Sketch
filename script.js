@@ -1,6 +1,9 @@
 let container = document.querySelector('#container');
+let btnReset = document.querySelector('#reset-btn');
 let rows; 
 let columns;
+
+createGrid(16, 16);
 
 function createGrid(nr1, nr2) {
     createRows(nr1);
@@ -21,8 +24,24 @@ function createCols(colsNumber) {
         for(let j = 0; j < colsNumber; j++) {
             let cell = document.createElement('div');
             cell.classList.add('column');
-            rows[j].appendChild(cell);
+            cell.style.backgroundColor = 'white';
+            rows[i].appendChild(cell);
         }
     }
     columns = document.querySelectorAll('.column');
 }
+
+columns.forEach(item => {
+    item.addEventListener('mouseover', event => {
+        item.style.backgroundColor = 'black';
+    })
+})
+
+function reset() {
+    columns.forEach(item => {
+        item.style.backgroundColor = 'white';
+    })
+}
+
+btnReset.addEventListener('click', reset);
+
